@@ -38,5 +38,21 @@
         </configuration>
       </plugin>
     </plugins>
+    <pluginManagement>
+      <plugins>
+        <plugin>
+          <groupId>org.eclipse.jetty</groupId>
+          <artifactId>jetty-maven-plugin</artifactId>
+          <version>9.2.1.v20140609</version>
+          <configuration>
+            <scanIntervalSeconds>5</scanIntervalSeconds>
+            <httpConnector>
+              <host>localhost</host>
+              <port>8080</port>
+            </httpConnector>
+          </configuration>
+        </plugin>
+      </plugins>
+    </pluginManagement>
   </build>
 </project>
