@@ -34,6 +34,11 @@
   <dependencyManagement>
     <dependencies>
       <dependency>
+        <groupId>io.vos.equity</groupId>
+        <artifactId>equity-model</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+      <dependency>
         <groupId>com.sun.jersey</groupId>
         <artifactId>jersey-server</artifactId>
         <version>${jersey.version}</version>

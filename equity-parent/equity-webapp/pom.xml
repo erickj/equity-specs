@@ -38,6 +38,10 @@
       <artifactId>guice-servlet</artifactId>
     </dependency>
     <dependency>
+      <groupId>io.vos.equity</groupId>
+      <artifactId>equity-model</artifactId>
+    </dependency>
+    <dependency>
       <groupId>javax.servlet</groupId>
       <artifactId>servlet-api</artifactId>
       <version>2.5</version>
