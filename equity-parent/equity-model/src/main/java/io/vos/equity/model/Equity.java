@@ -1,5 +1,7 @@
 package io.vos.equity.model;
 
+import com.google.common.base.Preconditions;
+
 import java.util.Date;
 
 public class Equity {
@@ -11,8 +13,8 @@ public class Equity {
 
   public Equity(int id, String name, String value) {
     this.id = id;
-    this.name = name;
-    this.value = value;
+    this.name = Preconditions.checkNotNull(name);
+    this.value = Preconditions.checkNotNull(value);
     this.now = new Date();
   }
 }
