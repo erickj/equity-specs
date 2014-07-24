@@ -10,6 +10,7 @@
 
   <properties>
     <guice.version>3.0</guice.version>
+    <gson.version>2.2.4</gson.version>
     <jetty.plugin.version>9.2.1.v20140609</jetty.plugin.version>
     <jersey.version>1.18.1</jersey.version>
     <junit.version>4.11</junit.version>
@@ -39,6 +40,11 @@
         <groupId>com.sun.jersey.contribs</groupId>
         <artifactId>jersey-guice</artifactId>
         <version>${jersey.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.google.code.gson</groupId>
+        <artifactId>gson</artifactId>
+        <version>${gson.version}</version>
       </dependency>
       <dependency>
         <groupId>com.google.inject</groupId>
