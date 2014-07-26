@@ -10,14 +10,14 @@
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <equity-core.version>${project.version}</equity-core.version>
-    <equity-model.version>${project.version}</equity-model.version>
-    <guice.version>3.0</guice.version>
-    <gson.version>2.2.4</gson.version>
-    <guava.version>17.0</guava.version>
-    <jetty.plugin.version>9.2.1.v20140609</jetty.plugin.version>
-    <jersey.version>1.18.1</jersey.version>
-    <junit.version>4.11</junit.version>
+    <version.equity-core>${project.version}</version.equity-core>
+    <version.equity-model>${project.version}</version.equity-model>
+    <version.gson>2.2.4</version.gson>
+    <version.guava>17.0</version.guava>
+    <version.guice>3.0</version.guice>
+    <version.jersey>1.18.1</version.jersey>
+    <version.junit>4.11</version.junit>
+    <version.plugin.jetty>9.2.1.v20140609</version.plugin.jetty>
   </properties>
 
   <modules>
@@ -31,12 +31,12 @@
     <dependency>
       <groupId>com.google.guava</groupId>
       <artifactId>guava</artifactId>
-      <version>${guava.version}</version>
+      <version>${version.guava}</version>
     </dependency>
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
-      <version>${junit.version}</version>
+      <version>${version.junit}</version>
       <scope>test</scope>
     </dependency>
   </dependencies>
@@ -47,37 +47,37 @@
       <dependency>
         <groupId>io.vos.equity</groupId>
         <artifactId>equity-core</artifactId>
-        <version>${equity-core.version}</version>
+        <version>${version.equity-core}</version>
       </dependency>
       <dependency>
         <groupId>io.vos.equity</groupId>
         <artifactId>equity-model</artifactId>
-        <version>${equity-model.version}</version>
+        <version>${version.equity-model}</version>
       </dependency>
       <dependency>
         <groupId>com.sun.jersey</groupId>
         <artifactId>jersey-server</artifactId>
-        <version>${jersey.version}</version>
+        <version>${version.jersey}</version>
       </dependency>
       <dependency>
         <groupId>com.sun.jersey.contribs</groupId>
         <artifactId>jersey-guice</artifactId>
-        <version>${jersey.version}</version>
+        <version>${version.jersey}</version>
       </dependency>
       <dependency>
         <groupId>com.google.code.gson</groupId>
         <artifactId>gson</artifactId>
-        <version>${gson.version}</version>
+        <version>${version.gson}</version>
       </dependency>
       <dependency>
         <groupId>com.google.inject</groupId>
         <artifactId>guice</artifactId>
-        <version>${guice.version}</version>
+        <version>${version.guice}</version>
       </dependency>
       <dependency>
         <groupId>com.google.inject.extensions</groupId>
         <artifactId>guice-servlet</artifactId>
-        <version>${guice.version}</version>
+        <version>${version.guice}</version>
       </dependency>
     </dependencies>
   </dependencyManagement>
@@ -100,7 +100,7 @@
         <plugin>
           <groupId>org.eclipse.jetty</groupId>
           <artifactId>jetty-maven-plugin</artifactId>
-          <version>${jetty.plugin.version}</version>
+          <version>${version.plugin.jetty}</version>
           <configuration>
             <scanIntervalSeconds>5</scanIntervalSeconds>
             <httpConnector>
