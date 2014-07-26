@@ -13,6 +13,8 @@ public class ApiModule extends JerseyServletModule {
 
   @Override
   protected void configureServlets() {
+    bind(JsonMessageBodyWriter.class);
+
     bind(EquityResource.class);
     serve("/api/*").with(GuiceContainer.class);
   }
@@ -20,7 +22,7 @@ public class ApiModule extends JerseyServletModule {
   @Provides
   Gson provideGson() {
     return new GsonBuilder()
-      .setDateFormat("yyyy-MM-dd'T'HH:mm:ssZ")
-      .create();
+        .setDateFormat("yyyy-MM-dd'T'HH:mm:ssZ")
+        .create();
   }
 }
