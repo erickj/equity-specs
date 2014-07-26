@@ -4,7 +4,7 @@ import com.google.common.base.Preconditions;
 
 import java.util.Date;
 
-public class Equity {
+public class Equity implements Model {
 
   private final int id;
   private final String name;
