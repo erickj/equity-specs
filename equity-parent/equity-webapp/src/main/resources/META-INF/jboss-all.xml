@@ -1,0 +1,26 @@
+<jboss xmlns="urn:jboss:1.0">
+  <!--
+      NOTE(erick): I had trouble setting up the initial Wildfly deployment, it
+      turns out Wildfly has a dependency on a Weld (CDI implementation) version
+      where using 'javax.inject.*' annotations causes class loader issues.
+
+      For details see: http://weld.cdi-spec.org/documentation/#4
+
+      "My application bundles a third-party library which uses javax.inject
+      annotations. This library was not intended to be a CDI library but on CDI 1.1
+      this library is being picked up as an implicit bean archive and breaks the
+      deployment of my application. Why is this happening?
+
+      Firstly, this issue only affects CDI 1.1. If possible, go and upgrade to CDI 1.2
+      (Weld 2.2 or later) where this issue does not occur.
+
+      If you cannot do that, read further: This is a known issue in the CDI 1.1
+      specification and occurs with third-party libraries such as Guava.
+
+      ...
+
+      per-deployment configuration - add the following content to
+      META-INF/jboss-all.xml of the application"
+  -->
+  <weld xmlns="urn:jboss:weld:1.0" require-bean-descriptor="true"/>
+</jboss>

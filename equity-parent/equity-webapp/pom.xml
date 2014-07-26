@@ -53,8 +53,32 @@
     <finalName>equity-webapp</finalName>
     <plugins>
       <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-war-plugin</artifactId>
+        <version>${version.plugin.maven-war-plugin}</version>
+        <configuration>
+
+          <!--
+              NOTE(erick): This is for loading the jboss-all.xml into the war's
+              META-INF. The config below adds the contents of
+              src/main/resources/META-INF to {warfile}/META-INF
+          -->
+          <webResources>
+            <resource>
+              <!-- this is relative to the pom.xml directory -->
+              <directory>${project.basedir}/src/main/resources</directory>
+            </resource>
+          </webResources>
+
+        </configuration>
+      </plugin>
+      <plugin>
         <groupId>org.eclipse.jetty</groupId>
         <artifactId>jetty-maven-plugin</artifactId>
+      </plugin>
+      <plugin>
+        <groupId>org.wildfly.plugins</groupId>
+        <artifactId>wildfly-maven-plugin</artifactId>
       </plugin>
     </plugins>
   </build>

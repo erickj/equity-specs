@@ -18,6 +18,8 @@
     <version.jersey>1.18.1</version.jersey>
     <version.junit>4.11</version.junit>
     <version.plugin.jetty>9.2.1.v20140609</version.plugin.jetty>
+    <version.plugin.maven-war-plugin>2.4</version.plugin.maven-war-plugin>
+    <version.plugin.wildfly>1.0.2.Final</version.plugin.wildfly>
   </properties>
 
   <modules>
@@ -108,6 +110,11 @@
               <port>8080</port>
             </httpConnector>
           </configuration>
+        </plugin>
+        <plugin>
+          <groupId>org.wildfly.plugins</groupId>
+          <artifactId>wildfly-maven-plugin</artifactId>
+          <version>${version.plugin.wildfly}</version>
         </plugin>
       </plugins>
     </pluginManagement>
