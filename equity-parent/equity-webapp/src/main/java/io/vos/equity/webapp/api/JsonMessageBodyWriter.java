@@ -66,14 +66,16 @@ final class JsonMessageBodyWriter implements MessageBodyWriter<Object> {
     Type apiResponseType;
     ApiResponseWrapper<?> apiResponse;
     Class<?> resultClass = result.getClass();
-    if (Model.class.isAssignableFrom(resultClass)) {
+    if (result instanceof Model) {
       apiResponseType = new TypeToken<ApiResponseWrapper<Model>>() {}.getType();
       apiResponse = ApiResponseWrapper.<Model>create((Model) result);
-    } else if (Exception.class.isAssignableFrom(resultClass)){
+    } else if (result instanceof Exception){
       apiResponseType = new TypeToken<ApiResponseWrapper<Exception>>() {}.getType();
       apiResponse = ApiResponseWrapper.<Exception>createError((Exception) result);
     } else {
-      throw new IllegalArgumentException("Unexpected API result type.");
+      apiResponseType = new TypeToken<ApiResponseWrapper<Object>>() {}.getType();
+      apiResponse = ApiResponseWrapper.<Object>create((Object) result);
+      //      throw new IllegalArgumentException("Unexpected API result type " + resultClass.getName());
     }
 
     return gson.toJson(apiResponse, apiResponseType);
