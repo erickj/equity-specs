@@ -6,7 +6,7 @@ import com.google.inject.Singleton;
 
 import io.vos.equity.model.Equity;
 
-import javax.inject.Inject;
+import javax.annotation.security.RolesAllowed;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
@@ -16,9 +16,10 @@ import javax.ws.rs.core.Response;
 @Path("/equity")
 @Produces(APPLICATION_JSON)
 @Singleton
-public class EquityResource {
+public class EquityResource implements ApiResource {
 
   @GET
+  @RolesAllowed("user")
   public String get() {
     return "I'm all the equities";
   }
