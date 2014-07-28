@@ -1,8 +1,8 @@
 package io.vos.equity.webapp.api;
 
-import com.google.common.base.Preconditions;
-
 import io.vos.equity.model.Model;
+
+import com.google.common.base.Preconditions;
 
 final class ApiResponseWrapper<T> {
 

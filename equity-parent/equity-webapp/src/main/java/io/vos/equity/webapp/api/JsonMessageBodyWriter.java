@@ -2,13 +2,13 @@ package io.vos.equity.webapp.api;
 
 import static javax.ws.rs.core.MediaType.APPLICATION_JSON;
 
+import io.vos.equity.model.Model;
+
 import com.google.common.base.Preconditions;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.google.inject.Inject;
 import com.google.inject.Singleton;
-
-import io.vos.equity.model.Model;
 
 import java.io.IOException;
 import java.io.OutputStream;

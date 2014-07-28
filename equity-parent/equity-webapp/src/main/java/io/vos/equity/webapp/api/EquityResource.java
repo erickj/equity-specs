@@ -2,9 +2,9 @@ package io.vos.equity.webapp.api;
 
 import static javax.ws.rs.core.MediaType.APPLICATION_JSON;
 
-import com.google.inject.Singleton;
-
 import io.vos.equity.model.Equity;
+
+import com.google.inject.Singleton;
 
 import javax.annotation.security.RolesAllowed;
 import javax.ws.rs.GET;
