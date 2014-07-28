@@ -1,4 +1,4 @@
-package io.vos.equity.webapp.security;
+package io.vos.equity.webapp.api.security;
 
 import com.google.inject.AbstractModule;
 import com.google.inject.matcher.Matcher;
