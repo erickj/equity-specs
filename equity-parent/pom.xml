@@ -130,6 +130,11 @@
       <activation>
         <activeByDefault>true</activeByDefault>
       </activation>
+      <properties>
+        <database.jdbc.url>jdbc:mysql://localhost:3306/equity_specs</database.jdbc.url>
+        <database.user>app</database.user>
+        <database.password>java17</database.password>
+      </properties>
     </profile>
 
     <!--
