@@ -9,7 +9,7 @@ public class EquityTest {
   @Test
   public void testContsructor_nullNameInvalid() {
     try {
-      new Equity(1, null /* name */, "value");
+      new Equity(null /* name */, "value");
       fail("Failed to throw on null name");
     } catch (NullPointerException expected) {}
   }
@@ -17,7 +17,7 @@ public class EquityTest {
   @Test
   public void testContsructor_nullValueInvalid() {
     try {
-      new Equity(1, "name", null /* value */);
+      new Equity("name", null /* value */);
       fail("Failed to throw on null value");
     } catch (NullPointerException expected) {}
   }

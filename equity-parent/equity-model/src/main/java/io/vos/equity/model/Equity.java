@@ -2,14 +2,30 @@ package io.vos.equity.model;
 
 import com.google.common.base.Preconditions;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.persistence.UniqueConstraint;
+import javax.validation.constraints.NotNull;
+
+@Entity
+@Table(name = "equity", uniqueConstraints = @UniqueConstraint(columnNames = "id"))
 public class Equity implements Model {
 
-  private final int id;
-  private final String name;
-  private final String value;
+  @Id
+  @GeneratedValue
+  private int id;
 
-  public Equity(int id, String name, String value) {
-    this.id = id;
+  @NotNull
+  private String name;
+
+  @NotNull
+  private String value;
+
+  public Equity() {}
+
+  public Equity(String name, String value) {
     this.name = Preconditions.checkNotNull(name);
     this.value = Preconditions.checkNotNull(value);
   }
