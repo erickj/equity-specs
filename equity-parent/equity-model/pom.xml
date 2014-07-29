@@ -15,4 +15,12 @@
   <packaging>jar</packaging>
   <name>equity-model</name>
   <url>http://maven.apache.org</url>
+
+  <dependencies>
+    <dependency>
+      <groupId>mysql</groupId>
+      <artifactId>mysql-connector-java</artifactId>
+    </dependency>
+  </dependencies>
+
 </project>

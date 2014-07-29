@@ -35,6 +35,16 @@
       <artifactId>guava</artifactId>
       <version>${version.guava}</version>
     </dependency>
+    <dependency>
+      <groupId>com.google.inject</groupId>
+      <artifactId>guice</artifactId>
+      <version>${version.guice}</version>
+    </dependency>
+    <dependency>
+      <groupId>com.google.inject.extensions</groupId>
+      <artifactId>guice-persist</artifactId>
+      <version>${version.guice}</version>
+    </dependency>
     <!-- Adds @Nullable annotation -->
     <dependency>
       <groupId>com.google.code.findbugs</groupId>
@@ -78,14 +88,14 @@
         <version>${version.gson}</version>
       </dependency>
       <dependency>
-        <groupId>com.google.inject</groupId>
-        <artifactId>guice</artifactId>
-        <version>${version.guice}</version>
-      </dependency>
-      <dependency>
         <groupId>com.google.inject.extensions</groupId>
         <artifactId>guice-servlet</artifactId>
         <version>${version.guice}</version>
+      </dependency>
+      <dependency>
+        <groupId>mysql</groupId>
+        <artifactId>mysql-connector-java</artifactId>
+        <version>5.1.31</version>
       </dependency>
     </dependencies>
   </dependencyManagement>
