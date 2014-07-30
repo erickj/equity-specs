@@ -1,4 +1,4 @@
-package io.vos.equity.controller;
+package io.vos.equity.model.controller;
 
 import io.vos.equity.model.Equity;
 
@@ -24,11 +24,11 @@ public class EquityController {
 
   @Transactional
   public Equity find(int id) {
-    return em.get().find(Equity.class, id);
+    return em.find(Equity.class, id);
   }
 
   @Transactional
   public void save(Equity equity) {
-    em.get().persist(equity);
+    em.persist(equity);
   }
 }

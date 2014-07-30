@@ -1,6 +1,6 @@
 package io.vos.equity.webapp.api;
 
-import io.vos.equity.controller.EquityController;
+import io.vos.equity.model.controller.EquityController;
 import io.vos.equity.webapp.api.session.SessionFilter;
 
 import com.google.gson.Gson;

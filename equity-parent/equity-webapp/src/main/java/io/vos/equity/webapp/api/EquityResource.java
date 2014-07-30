@@ -2,8 +2,8 @@ package io.vos.equity.webapp.api;
 
 import static javax.ws.rs.core.MediaType.APPLICATION_JSON;
 
-import io.vos.equity.controller.EquityController;
 import io.vos.equity.model.Equity;
+import io.vos.equity.model.controller.EquityController;
 
 import com.google.inject.Inject;
 import com.google.inject.Provider;
