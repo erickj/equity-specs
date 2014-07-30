@@ -1,15 +1,15 @@
 <persistence xmlns="http://java.sun.com/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd" version="2.0">
 
-  <persistence-unit name="io.vos.equity.model" transaction-type="RESOURCE_LOCAL">
+  <persistence-unit name="io.vos.equity.auth" transaction-type="RESOURCE_LOCAL">
     <provider>org.hibernate.ejb.HibernatePersistence</provider>
 
-    <class>io.vos.equity.model.Equity</class>
+    <class>io.vos.equity.auth.User</class>
 
     <properties>
       <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
-      <property name="javax.persistence.jdbc.url" value="${database.model.jdbc.url}"/>
-      <property name="javax.persistence.jdbc.user" value="${database.model.user}"/>
-      <property name="javax.persistence.jdbc.password" value="${database.model.password}"/>
+      <property name="javax.persistence.jdbc.url" value="${database.auth.jdbc.url}"/>
+      <property name="javax.persistence.jdbc.user" value="${database.auth.user}"/>
+      <property name="javax.persistence.jdbc.password" value="${database.auth.password}"/>
 
       <property name="hibernate.dialect" value="org.hibernate.dialect.MySQLDialect"/>
 

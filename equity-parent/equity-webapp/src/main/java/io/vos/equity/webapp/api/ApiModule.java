@@ -18,7 +18,7 @@ public class ApiModule extends JerseyServletModule {
   @Override
   protected void configureServlets() {
     // @see https://github.com/google/guice/wiki/JPA
-    install(new JpaPersistModule("entityModelStore"));
+    install(new JpaPersistModule("io.vos.equity.model"));
     filter("/*").through(PersistFilter.class);
 
     bind(EquityController.class).in(RequestScoped.class);

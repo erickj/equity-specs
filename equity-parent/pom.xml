@@ -26,6 +26,7 @@
     <module>equity-core</module>
     <module>equity-model</module>
     <module>equity-webapp</module>
+    <module>equity-auth</module>
   </modules>
 
   <!-- Dependencies automatically included in all child poms -->
@@ -131,9 +132,19 @@
         <activeByDefault>true</activeByDefault>
       </activation>
       <properties>
+        <hibernate.hbm2ddl.auto>create</hibernate.hbm2ddl.auto>
+
         <database.jdbc.url>jdbc:mysql://localhost:3306/equity_specs</database.jdbc.url>
         <database.user>app</database.user>
         <database.password>java17</database.password>
+
+        <database.auth.jdbc.url>${database.jdbc.url}</database.auth.jdbc.url>
+        <database.auth.user>${database.user}</database.auth.user>
+        <database.auth.password>${database.password}</database.auth.password>
+
+        <database.model.jdbc.url>${database.jdbc.url}</database.model.jdbc.url>
+        <database.model.user>${database.user}</database.model.user>
+        <database.model.password>${database.password}</database.model.password>
       </properties>
     </profile>
 
