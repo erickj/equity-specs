@@ -14,21 +14,21 @@ public class EquityController {
 
   private static final Logger LOGGER = Logger.getLogger(EquityController.class.getName());
 
-  private Provider<EntityManager> emProvider;
+  private EntityManager em;
 
   @Inject
-  EquityController(Provider<EntityManager> emProvider) {
+  EquityController(EntityManager em) {
     LOGGER.info("Constructed new EquityController");
-    this.emProvider = Preconditions.checkNotNull(emProvider);;
+    this.em = em;
   }
 
   @Transactional
   public Equity find(int id) {
-    return emProvider.get().find(Equity.class, id);
+    return em.get().find(Equity.class, id);
   }
 
   @Transactional
   public void save(Equity equity) {
-    emProvider.get().persist(equity);
+    em.get().persist(equity);
   }
 }
