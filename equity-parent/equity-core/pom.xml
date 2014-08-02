@@ -15,4 +15,11 @@
   <packaging>jar</packaging>
   <name>equity-core</name>
   <url>http://maven.apache.org</url>
+
+  <dependencies>
+    <dependency>
+      <groupId>com.google.inject.extensions</groupId>
+      <artifactId>guice-persist</artifactId>
+    </dependency>
+  </dependencies>
 </project>
