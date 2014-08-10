@@ -3,10 +3,10 @@ package io.vos.equity.webapp.api;
 import static javax.ws.rs.core.MediaType.APPLICATION_JSON;
 
 import io.vos.equity.model.Equity;
-import io.vos.equity.model.controller.EquityController;
+import io.vos.equity.model.controller.ModelController;
 
 import com.google.inject.Inject;
-import com.google.inject.Provider;
+//import com.google.inject.Provider;
 import com.google.inject.Singleton;
 
 import javax.annotation.security.RolesAllowed;
@@ -23,7 +23,8 @@ import javax.ws.rs.core.Response;
 public class EquityResource implements ApiResource {
 
   @Inject
-  private Provider<EquityController> controllerProvider;
+  //  private Provider<EquityController> controllerProvider;
+  private ModelController<Equity> controller;
 
   @GET
   @RolesAllowed("user")
@@ -34,7 +35,7 @@ public class EquityResource implements ApiResource {
   @GET
   @Path("{id: [0-9]+}")
   public Equity get(@PathParam("id") String id) {
-    return controllerProvider.get().find(Integer.parseInt(id));
+    return controller.find(Integer.parseInt(id));
   }
 
   @GET
@@ -47,8 +48,10 @@ public class EquityResource implements ApiResource {
 
   @POST
   public Equity post() {
-    Equity e = new Equity("erickj", "awesome");
-    controllerProvider.get().save(e);
+    Equity e = controller.create()
+        .setName("erick")
+        .setValue("invaluable");
+    controller.persist(e);
     return e;
   }
 }

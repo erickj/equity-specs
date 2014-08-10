@@ -1,6 +1,7 @@
 package io.vos.equity.webapp.api;
 
-import io.vos.equity.model.controller.EquityController;
+import io.vos.equity.ext.jpa.JpaBindingModule;
+import io.vos.equity.model.controller.ModelControllerModule;
 import io.vos.equity.webapp.api.session.SessionFilter;
 
 import com.google.gson.Gson;
@@ -8,7 +9,6 @@ import com.google.gson.GsonBuilder;
 import com.google.inject.Provides;
 import com.google.inject.Singleton;
 import com.google.inject.persist.PersistFilter;
-import com.google.inject.persist.jpa.JpaPersistModule;
 import com.google.inject.servlet.RequestScoped;
 import com.sun.jersey.guice.JerseyServletModule;
 import com.sun.jersey.guice.spi.container.servlet.GuiceContainer;
@@ -17,11 +17,7 @@ public class ApiModule extends JerseyServletModule {
 
   @Override
   protected void configureServlets() {
-    // @see https://github.com/google/guice/wiki/JPA
-    install(new JpaPersistModule("io.vos.equity.model"));
-    filter("/*").through(PersistFilter.class);
-
-    bind(EquityController.class).in(RequestScoped.class);
+    installJpaBindingModule(new ModelControllerModule());
 
     bind(JsonMessageBodyWriter.class);
     bind(EquityResource.class);
@@ -29,6 +25,11 @@ public class ApiModule extends JerseyServletModule {
     filter("/*").through(SessionFilter.class);
 
     serve("/api/*").with(GuiceContainer.class);
+  }
+
+  private void installJpaBindingModule(JpaBindingModule jpaBindingModule) {
+    install(jpaBindingModule);
+    filter("/*").through(jpaBindingModule.getPersistFilterKey());
   }
 
   @Provides
