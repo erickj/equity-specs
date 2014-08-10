@@ -15,12 +15,12 @@
     <version.gson>2.2.4</version.gson>
     <version.guava>17.0</version.guava>
     <version.guice>3.0</version.guice>
-    <version.jboss.bom>8.0.0.Final</version.jboss.bom>
     <version.jersey>1.18.1</version.jersey>
     <version.junit>4.11</version.junit>
     <version.mysql-connector>5.1.31</version.mysql-connector>
     <version.plugin.maven-war-plugin>2.4</version.plugin.maven-war-plugin>
     <version.plugin.wildfly>1.0.2.Final</version.plugin.wildfly>
+    <version.wildfly.bom>8.1.0.Final</version.wildfly.bom>
   </properties>
 
   <modules>
@@ -197,7 +197,7 @@
           <dependency>
             <groupId>org.wildfly.bom</groupId>
             <artifactId>jboss-javaee-7.0-with-hibernate</artifactId>
-            <version>${version.jboss.bom}</version>
+            <version>${version.wildfly.bom}</version>
             <type>pom</type>
             <scope>import</scope>
           </dependency>
