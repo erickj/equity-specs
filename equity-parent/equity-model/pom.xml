@@ -18,6 +18,10 @@
 
   <dependencies>
     <dependency>
+      <groupId>io.vos.equity</groupId>
+      <artifactId>equity-core</artifactId>
+    </dependency>
+    <dependency>
       <groupId>mysql</groupId>
       <artifactId>mysql-connector-java</artifactId>
     </dependency>
