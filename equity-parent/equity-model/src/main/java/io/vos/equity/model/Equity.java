@@ -25,8 +25,13 @@ public class Equity implements Model {
 
   public Equity() {}
 
-  public Equity(String name, String value) {
+  public Equity setName(String name) {
     this.name = Preconditions.checkNotNull(name);
+    return this;
+  }
+
+  public Equity setValue(String value) {
     this.value = Preconditions.checkNotNull(value);
+    return this;
   }
 }
